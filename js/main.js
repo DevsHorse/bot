@@ -2,7 +2,7 @@
 
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
-};
+}
 
 function startGame() {
   let secret = 50;
@@ -10,7 +10,7 @@ function startGame() {
     function gameInit(){
       let userAnswer = prompt('Угадай число от 1 до 100 =)');
 
-        if (userAnswer == null) {
+        if (userAnswer === null) {
           alert('Конец игры');
         } else if (!isNumber(userAnswer)) {
           alert('Введите число!');
@@ -24,8 +24,8 @@ function startGame() {
         } else {
           alert('Вы угадали!');
         }
-    };
+    }
   return gameInit();
-};
+}
 
 let bot = startGame();
