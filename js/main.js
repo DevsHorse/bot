@@ -15,10 +15,10 @@ function getRandomNumber(min, max) {                                       // Ф
 
 // Игра
 function startGame() {
-  let secret = 50;
+  let secret = getRandomNumber(1, 100);
   let tryes = 10;
-  let startMessege = alert('Начнем же игру!');                                 // Приветствие 
-
+  alert('Начнем же игру!');                                 // Приветствие 
+  console.log('Новое секретное число - ' + secret + ', только тсс! =)');
   function gameInit() {
 
     let userAnswer = prompt(`Угадай число от 1 до 100!  Попытки: ${tryes--}`);   // Вопрос 
