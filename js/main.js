@@ -4,9 +4,14 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+function getRandomNumber(min, max) {                                       // Функция что бы зарандомить число secret 
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function startGame() {
-  let secret = 50;
-  let startMessege = alert('Начнем же игру!');
+  let secret = getRandomNumber(1, 100);
+  alert('Начнем же игру!');
+  console.log('Число: ' + secret);
     function gameInit(){
       let userAnswer = prompt('Угадай число от 1 до 100 =)');
 
