@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
 // Вспомогательные функции
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);                                // Проверка на число 
-};
+}
 
 function getEndMessege() {
-  return alert('До встречи! Спасибо за игру!!!');                             // Вывод прощания, ибо так меньше текста
-};
+  return alert('До встречи! Спасибо за игру!!!');                         // Вывод прощания, ибо так меньше текста
+}
 
-function getRandomNumber(min, max) {                                          // Функция что бы зарандомить число secret 
+function getRandomNumber(min, max) {                                       // Функция что бы зарандомить число secret 
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -32,7 +32,7 @@ function startGame() {
       } else {                                                                 
         return getEndMessege();                                                  // Закончить игру     
       }
-    } else if (userAnswer == null) {                                             // Отмена во время вопроса, закончить игру
+    } else if (userAnswer === null) {                                     // Отмена во время вопроса, закончить игру
       return getEndMessege();
 
     } else if (!isNumber(userAnswer)) {                                          // Проверка на число и пустые поля
@@ -49,7 +49,7 @@ function startGame() {
       gameInit();
 
     } else {
-      if (confirm('Поздравляю, Вы угадали!!! Хотели бы сыграть еще?') === true) {   // Если угадал число и хочет сыграть еще 
+      if (confirm('Поздравляю, Вы угадали!!! Хотели бы сыграть еще?') === true) { // Угадал, играем дальше
         tryes = 10;
         secret = getRandomNumber(1, 100);
         console.log('Новое секретное число - ' + secret + ', только тсс! =)');      // Что бы знать число =)
@@ -58,8 +58,8 @@ function startGame() {
         return getEndMessege();
       }
     }
-  };
+  }
   return gameInit();
-};
+}
 
 let bot = startGame();
